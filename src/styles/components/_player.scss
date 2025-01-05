@@ -1,0 +1,66 @@
+.player {
+  grid-area: player;
+  @include flex-between;
+  padding: $spacing-md $spacing-xl;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  .song-info {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    width: 30%;
+
+    img {
+      width: 56px;
+      height: 56px;
+      border-radius: 4px;
+    }
+
+    .details {
+      h3 {
+        color: $text-primary;
+        font-size: $font-size-base;
+      }
+
+      p {
+        color: $text-secondary;
+        font-size: $font-size-sm;
+      }
+    }
+  }
+
+  .controls {
+    @include flex-center;
+    gap: $spacing-lg;
+    
+    button {
+      background: none;
+      border: none;
+      color: $text-primary;
+      cursor: pointer;
+      
+      &.play {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $text-primary;
+        color: $background-base;
+        @include flex-center;
+        @include hover-effect;
+      }
+    }
+  }
+
+  .volume {
+    @include flex-center;
+    gap: $spacing-md;
+    width: 30%;
+    
+    input[type="range"] {
+      width: 100px;
+      &::-webkit-slider-thumb {
+        background: $primary-color;
+      }
+    }
+  }
+}

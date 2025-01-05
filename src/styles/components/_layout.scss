@@ -1,0 +1,22 @@
+.layout {
+  display: grid;
+  grid-template-areas:
+    "sidebar main"
+    "player player";
+  grid-template-columns: $sidebar-width 1fr;
+  grid-template-rows: 1fr $player-height;
+  height: 100vh;
+  background-color: $background-base;
+  color: $text-primary;
+
+  .main-content {
+    grid-area: main;
+    overflow-y: auto;
+    padding: $spacing-md;
+    
+    .content {
+      margin-top: $header-height;
+      padding-bottom: $player-height;
+    }
+  }
+}

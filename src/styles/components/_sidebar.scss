@@ -1,0 +1,45 @@
+.sidebar {
+  grid-area: sidebar;
+  background-color: $background-base;
+  padding: $spacing-md;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+  .logo {
+    padding: $spacing-md 0;
+    h1 {
+      color: $text-primary;
+      font-size: 24px;
+    }
+  }
+
+  .nav-menu {
+    margin-top: $spacing-lg;
+
+    .nav-item {
+      @include flex-center;
+      gap: $spacing-md;
+      padding: $spacing-sm;
+      color: $text-secondary;
+      text-decoration: none;
+      
+      &:hover {
+        color: $text-primary;
+      }
+
+      i {
+        font-size: $font-size-lg;
+      }
+    }
+  }
+
+  .playlists {
+    margin-top: $spacing-xl;
+    
+    h2 {
+      color: $text-secondary;
+      font-size: $font-size-sm;
+      text-transform: uppercase;
+      margin-bottom: $spacing-md;
+    }
+  }
+}
