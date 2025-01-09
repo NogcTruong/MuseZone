@@ -1,9 +1,7 @@
 .header-container {
   background-color: $background-base;
   padding: 10px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include flex-between;
 
   .logo {
     width: 16%;
@@ -94,6 +92,7 @@
   .header-right {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 26px;
     width: 16%;
   }

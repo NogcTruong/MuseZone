@@ -1,8 +1,9 @@
 .sidebar {
   grid-area: sidebar;
   background-color: $background-base;
-  padding: $spacing-md;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 84px;
+  overflow-y: auto;
 
   .logo {
     padding: $spacing-md 0;
@@ -15,26 +16,65 @@
   .nav-menu {
     margin-top: $spacing-lg;
 
+    &.sidebar-nav {
+      margin-top: calc($spacing-sm);
+    }
+
     .nav-item {
-      @include flex-center;
+      @include flex-start;
       gap: $spacing-md;
       padding: $spacing-sm;
       color: $text-secondary;
       text-decoration: none;
-      
+      padding-left: $spacing-lg;
+      margin: $spacing-sm 0;
+      cursor: pointer;
+
+      &.active {
+        color: $primary-color;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 26px !important;
+          height: 100%;
+          border-left: 4px solid;
+          width: 0;
+          background: linear-gradient(
+            to right,
+            rgb(246 95 53 / 34%),
+            transparent
+          );
+        }
+      }
+
       &:hover {
-        color: $text-primary;
+        color: $primary-color;
+        animation: fadeIn 0.5s ease-out;
+
+        .statistics-icon {
+          fill: $primary-color;
+        }
       }
 
       i {
         font-size: $font-size-lg;
+      }
+
+      .statistics-icon {
+        width: 23px;
+        height: 23px;
+        fill: white;
       }
     }
   }
 
   .playlists {
     margin-top: $spacing-xl;
-    
+
     h2 {
       color: $text-secondary;
       font-size: $font-size-sm;
@@ -42,4 +82,80 @@
       margin-bottom: $spacing-md;
     }
   }
+
+  .yourMusic {
+    display: flex;
+    flex-direction: column;
+    margin-top: $spacing-xxl;
+
+    .yourMusic-title {
+      margin-bottom: $spacing-md;
+      padding-left: $spacing-lg;
+    }
+  }
+
+  .your-playlists {
+    margin-top: $spacing-xxl;
+
+    &-title {
+      margin-bottom: $spacing-md;
+      padding-left: $spacing-lg;
+    }
+
+    &-1-dot {
+      width: 8px;
+      height: 8px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    &-2-dot {
+      width: 8px;
+      height: 8px;
+      background-color: yellow;
+      border-radius: 50%;
+    }
+
+    &-3-dot {
+      width: 8px;
+      height: 8px;
+      background-color: green;
+      border-radius: 50%;
+    }
+
+    &-4-dot {
+      width: 8px;
+      height: 8px;
+      background-color: blue;
+      border-radius: 50%;
+    }
+
+    .create-playlist-text {
+      color: $primary-color;
+    }
+
+    .create-playlist-icon {
+      width: 18px;
+      height: 18px;
+      color: $primary-color;
+    }
+
+    .create-new-playlist {
+      margin-top: $spacing-md;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $primary-color;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $background-extra;
 }

@@ -91,9 +91,6 @@ const Header = () => {
             <Avatar className="avatar" src={avatar} />
           </figure>
         </div>
-
-        {/* <Button>Login</Button>
-        <Button>Register</Button> */}
       </Toolbar>
     </AppBar>
   );
